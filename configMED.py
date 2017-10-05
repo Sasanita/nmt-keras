@@ -6,11 +6,11 @@ def load_parameters():
     """
 
     # Input data params
-    TASK_NAME = 'med_out_bpe' #out-domain'                           # Task name
+    TASK_NAME = 'med'                           # Task name
     DATASET_NAME = 'EN-ES'                        # Dataset name
     SRC_LAN = 'en'                                  # Language of the source text
     TRG_LAN = 'es'                                  # Language of the target text
-    DATA_ROOT_PATH = '/mnt/data/zparcheta/nmt-keras-forked/examples/medical_corpus/out-domain/EN-ES/joint_bpe/'  # Path where data is stored
+    DATA_ROOT_PATH = '/mnt/data/zparcheta/nmt-keras-forked/examples/medical_corpus/medical_web_crawl/EN-ES/joint_bpe/'  # Path where data is stored
 
     # SRC_LAN or TRG_LAN will be added to the file names
     TEXT_FILES = {'train': 'training.clean.lowercased.',        # Data files
@@ -27,9 +27,9 @@ def load_parameters():
     METRICS = ['coco']                            # Metric used for evaluating the model
     EVAL_ON_SETS = ['val']                        # Possible values: 'train', 'val' and 'test' (external evaluator)
     EVAL_ON_SETS_KERAS = []                       # Possible values: 'train', 'val' and 'test' (Keras' evaluator). Untested.
-    START_EVAL_ON_EPOCH = 1                       # First epoch to start the model evaluation
+    START_EVAL_ON_EPOCH = 0                       # First epoch to start the model evaluation
     EVAL_EACH_EPOCHS = False                      # Select whether evaluate between N epochs or N updates
-    EVAL_EACH = 3750                              # Sets the evaluation frequency (epochs or updates)
+    EVAL_EACH = 3000                              # Sets the evaluation frequency (epochs or updates)
 
     # Search parameters
     SAMPLING = 'max_likelihood'                   # Possible values: multinomial or max_likelihood (recommended)
@@ -61,7 +61,7 @@ def load_parameters():
     SAMPLE_ON_SETS = ['train', 'val']             # Possible values: 'train', 'val' and 'test'
     N_SAMPLES = 5                                 # Number of samples generated
     START_SAMPLING_ON_EPOCH = 2                   # First epoch where to start the sampling counter
-    SAMPLE_EACH_UPDATES = 10000                     # Sampling frequency (always in #updates)
+    SAMPLE_EACH_UPDATES = 1000                     # Sampling frequency (always in #updates)
 
     # Unknown words treatment
     POS_UNK = True                               # Enable POS_UNK strategy for unknown words
@@ -116,14 +116,14 @@ def load_parameters():
     LOSS = 'categorical_crossentropy'
     CLASSIFIER_ACTIVATION = 'softmax'
 
-    OPTIMIZER = 'Adam'                            # Optimizer
-    LR = 0.0002                                   # Learning rate. Recommended values - Adam 0.001 - Adadelta 1.0
+    OPTIMIZER = 'Adadelta'                            # Optimizer
+    LR = 1                                   # Learning rate. Recommended values - Adam 0.001 - Adadelta 1.0
     CLIP_C = 5.                                   # During training, clip L2 norm of gradients to this value (0. means deactivated)
     CLIP_V = 0.                                   # During training, clip absolute value of gradients to this value (0. means deactivated)
     SAMPLE_WEIGHTS = True                         # Select whether we use a weights matrix (mask) for the data outputs
     # Learning rate annealing
     LR_DECAY = None                               # Frequency (number of epochs or updates) between LR annealings. Set to None for not decay the learning rate
-    LR_GAMMA = 0.8                                # Multiplier used for decreasing the LR
+    LR_GAMMA = 0.9                                # Multiplier used for decreasing the LR
     LR_REDUCE_EACH_EPOCHS = False                 # Reduce each LR_DECAY number of epochs or updates
     LR_START_REDUCTION_ON_EPOCH = 0               # Epoch to start the reduction
     LR_REDUCER_TYPE = 'exponential'               # Function to reduce. 'linear' and 'exponential' implemented.
@@ -227,7 +227,7 @@ def load_parameters():
     VERBOSE = 1                                        # Verbosity level
     RELOAD = 0                                         # If 0 start training from scratch, otherwise the model
                                                        # Saved on epoch 'RELOAD' will be used
-    RELOAD_EPOCH = False                                # Select whether we reload epoch or update number
+    RELOAD_EPOCH = True                                # Select whether we reload epoch or update number
 
     REBUILD_DATASET = True                             # Build again or use stored instance
     MODE = 'training'                                  # 'training' or 'sampling' (if 'sampling' then RELOAD must

@@ -1,0 +1,14 @@
+logs/ES_IN_0.625_2.txt  RUNTIME:  0
+logs/ES_IN_0.625_2.txt  RUNTIME:  3
+logs/ES_IN_0.625_2.txt  RUNTIME:  8
+logs/ES_IN_0.625_2.txt  RUNTIME:  4
+logs/ES_IN_0.625_2.txt  RUNTIME:  61161
+logs/ES_IN_0.625_2.txt  RUNTIME:  4
+logs/ES_IN_0.625_2.txt  RUNTIME:  6
+logs/med_es-en.txt  RUNTIME:  6
+logs/med_es-en.txt  RUNTIME:  6
+logs/med_es-en.txt  RUNTIME:  331
+logs/med_es-en.txt  RUNTIME:  3
+logs/med_es-en.txt  RUNTIME:  52988
+logs/med_es-en.txt  RUNTIME:  107086
+logs/med_out_es-en.txt  RUNTIME:  106760
