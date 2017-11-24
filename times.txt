@@ -12,3 +12,11 @@ logs/med_es-en.txt  RUNTIME:  3
 logs/med_es-en.txt  RUNTIME:  52988
 logs/med_es-en.txt  RUNTIME:  107086
 logs/med_out_es-en.txt  RUNTIME:  106760
+logs/med_out_es-en.txt  RUNTIME:  276697
+logs/med_out_es-en.txt  RUNTIME:  332559
+logs/med_0.19_es-en.txt  RUNTIME:  56
+logs/med_0.19_es-en.txt  RUNTIME:  250
+logs/med_0.19_es-en.txt  RUNTIME:  107305
+logs/med_0.3_es-en.txt  RUNTIME:  64881
+logs/med_in_es-en.txt  RUNTIME:  7
+logs/med_in_es-en.txt  RUNTIME:  55865

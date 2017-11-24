@@ -1,5 +1,5 @@
 start=`date +%s`
-fichero=logs/med_out_es-en.txt
+fichero=logs/inf_10_es-en_pred.txt
 rm $fichero
 python main.py > $fichero 2>&1
 end=`date +%s`

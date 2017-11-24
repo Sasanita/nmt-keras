@@ -6,14 +6,14 @@ def load_parameters():
     """
 
     # Input data params
-    TASK_NAME = 'med_out_bpe' #out-domain'                           # Task name
-    DATASET_NAME = 'EN-ES'                        # Dataset name
+    TASK_NAME = 'infreq' #out-domain'                           # Task name
+    DATASET_NAME = '10'                        # Dataset name
     SRC_LAN = 'en'                                  # Language of the source text
     TRG_LAN = 'es'                                  # Language of the target text
-    DATA_ROOT_PATH = '/mnt/data/zparcheta/nmt-keras-forked/examples/medical_corpus/out-domain/EN-ES/joint_bpe/'  # Path where data is stored
+    DATA_ROOT_PATH = '/mnt/data/zparcheta/nmt-keras-forked/examples/medical_corpus/infreq-selection/10/joint_bpe/'  # Path where data is stored
 
     # SRC_LAN or TRG_LAN will be added to the file names
-    TEXT_FILES = {'train': 'training.clean.lowercased.',        # Data files
+    TEXT_FILES = {'train': TASK_NAME + DATASET_NAME +'.clean.lowercased.',        # Data files
                   'val': 'dev-test/dev.clean.lowercased.',
                   'test': 'dev-test/test.clean.lowercased.'}
 
@@ -25,11 +25,11 @@ def load_parameters():
 
     # Evaluation params
     METRICS = ['coco']                            # Metric used for evaluating the model
-    EVAL_ON_SETS = ['val']                        # Possible values: 'train', 'val' and 'test' (external evaluator)
+    EVAL_ON_SETS = ['val', 'test']                        # Possible values: 'train', 'val' and 'test' (external evaluator)
     EVAL_ON_SETS_KERAS = []                       # Possible values: 'train', 'val' and 'test' (Keras' evaluator). Untested.
-    START_EVAL_ON_EPOCH = 1                       # First epoch to start the model evaluation
+    START_EVAL_ON_EPOCH = 4                       # First epoch to start the model evaluation
     EVAL_EACH_EPOCHS = False                      # Select whether evaluate between N epochs or N updates
-    EVAL_EACH = 3750                              # Sets the evaluation frequency (epochs or updates)
+    EVAL_EACH = 2000                              # Sets the evaluation frequency (epochs or updates)
 
     # Search parameters
     SAMPLING = 'max_likelihood'                   # Possible values: multinomial or max_likelihood (recommended)
@@ -216,7 +216,7 @@ def load_parameters():
 
     # Results plot and models storing parameters
     EXTRA_NAME = ''                               # This will be appended to the end of the model name
-    MODEL_NAME = TASK_NAME + '_' + SRC_LAN + TRG_LAN + '_' + MODEL_TYPE
+    MODEL_NAME = TASK_NAME + '_' + DATASET_NAME + '_' + SRC_LAN + TRG_LAN 
 
     MODEL_NAME += EXTRA_NAME
 
